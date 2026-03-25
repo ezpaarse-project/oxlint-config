@@ -23,7 +23,7 @@ touch .oxlintrc.json
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/js.jsonc"],
+  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/js.jsonc"]
 }
 ```
 
@@ -48,6 +48,6 @@ touch .oxlintrc.json
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/ts.jsonc"],
+  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/ts.jsonc"]
 }
 ```
