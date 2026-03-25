@@ -1,6 +1,6 @@
 {
   "name": "@ezpaarse-project/oxlint-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "oxlint configuration for projects of this organisation",
   "keywords": [],
   "homepage": "https://github.com/ezpaarse-project/oxlint-config#readme",
@@ -10,8 +10,8 @@
   "license": "CeCILL",
   "author": "oxypomme",
   "files": [
-    "js.json",
-    "ts.json"
+    "./js.jsonc",
+    "./ts.jsonc"
   ],
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
@@ -22,5 +22,10 @@
   "peerDependencies": {
     "oxlint": "^1"
   },
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "pnpm@10.11.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
+  }
 }
