@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./js.jsonc"],
+
+  "plugins": ["typescript"],
+
+  "rules": {
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+
+    "typescript/no-dynamic-delete": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/array-type": ["error", { "default": "array" }],
+    "typescript/consistent-generic-constructors": "error",
+    "typescript/consistent-indexed-object-style": ["error", "record"],
+    "typescript/consistent-type-definitions": ["error", "type"],
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-empty-interface": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/prefer-for-of": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/no-non-null-asserted-nullish-coalescing": "error",
+    "typescript/explicit-function-return-type": "warn",
+
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns-type": "off",
+  },
+
+  "overrides": [
+    {
+      "files": ["*.config.{ts,mts,cts}"],
+      "rules": {
+        // Allow default exports for config files (Vite, etc.)
+        "import/no-default-export": "off",
+      },
+    },
+  ],
+}

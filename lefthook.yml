@@ -1,0 +1,12 @@
+templates:
+  fmt_flags: --no-error-on-unmatched-pattern
+
+pre-commit:
+  jobs:
+    - name: format
+      run: pnpm oxfmt {fmt_flags}
+
+commit-msg:
+  jobs:
+    - name: lint message
+      run: pnpm commitlint --edit {1}
