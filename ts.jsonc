@@ -31,6 +31,10 @@
     "typescript/explicit-function-return-type": "warn",
     // Style
     "import/consistent-type-specifier-style": "off",
+    "typescript/parameter-properties": [
+      "warn",
+      { "prefer": "parameter-property" },
+    ],
   },
 
   "overrides": [
