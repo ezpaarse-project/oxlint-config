@@ -5,13 +5,18 @@
   "plugins": ["typescript"],
 
   "rules": {
-    "import/no-amd": "error",
-    "import/no-commonjs": "error",
-
+    // Pedantic
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns-type": "off",
+    // Restriction
+    "no-const-enum": "error",
+    "typescript/no-namespace": "error",
     "typescript/no-dynamic-delete": "error",
     "typescript/no-empty-object-type": "error",
     "typescript/no-explicit-any": "error",
     "typescript/no-import-type-side-effects": "error",
+    "typescript/no-invalid-void-type": "error",
+    "typescript/no-non-null-asserted-nullish-coalescing`": "error",
     "typescript/adjacent-overload-signatures": "error",
     "typescript/array-type": ["error", { "default": "array" }],
     "typescript/consistent-generic-constructors": "error",
@@ -24,9 +29,6 @@
     "typescript/prefer-function-type": "error",
     "typescript/no-non-null-asserted-nullish-coalescing": "error",
     "typescript/explicit-function-return-type": "warn",
-
-    "jsdoc/require-param-type": "off",
-    "jsdoc/require-returns-type": "off",
   },
 
   "overrides": [

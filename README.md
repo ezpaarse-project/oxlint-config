@@ -32,7 +32,7 @@ touch .oxlintrc.json
 1. Add dev dependencies
 
 ```sh
-npm i -D oxlint oxlint-tsgolint @ezpaarse-project/oxlint-config
+npm i -D oxlint @ezpaarse-project/oxlint-config
 ```
 
 2. Add base configuration to `extends`
