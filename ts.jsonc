@@ -29,6 +29,8 @@
     "typescript/prefer-function-type": "error",
     "typescript/no-non-null-asserted-nullish-coalescing": "error",
     "typescript/explicit-function-return-type": "warn",
+    // Style
+    "import/consistent-type-specifier-style": "off",
   },
 
   "overrides": [
