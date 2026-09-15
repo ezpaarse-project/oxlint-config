@@ -1,0 +1,77 @@
+import { defineConfig } from "oxlint";
+
+export default defineConfig({
+  plugins: ["oxc", "unicorn", "import", "promise", "jsdoc"],
+
+  categories: {
+    correctness: "error",
+    suspicious: "error",
+    pedantic: "warn",
+    perf: "warn",
+    style: "warn",
+  },
+
+  rules: {
+    // Pedantic
+    eqeqeq: ["error", "always", { null: "ignore" }],
+    // Restriction
+    "default-case": "error",
+    "class-methods-use-this": "error",
+    "no-alert": "error",
+    "no-bitwise": "error",
+    "no-console": "error",
+    "no-empty": "error",
+    "no-empty-function": "error",
+    "no-plusplus": "error",
+    "no-proto": "error",
+    "no-regex-spaces": "error",
+    "no-restricted-globals": "error",
+    "no-var": "error",
+    "no-void": ["error", { allowAsStatement: true }],
+    "no-param-reassign": "error",
+    "no-use-before-define": "error",
+    "no-sequences": "error",
+    "import/no-amd": "error",
+    "import/no-cycle": "error",
+    "import/no-default-export": "error",
+    "import/no-dynamic-require": "error",
+    "import/no-anonymous-default-export": "error",
+    "promise/catch-or-return": "error",
+    "promise/spec-only": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/no-array-reduce": "error",
+    "unicorn/no-length-as-slice-end": "error",
+    "unicorn/no-magic-array-flat-depth": "error",
+    "unicorn/no-process-exit": "error",
+    "unicorn/prefer-modern-math-apis": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/no-useless-error-capture-stack-trace": "error",
+    "jsdoc/check-access": "error",
+    "jsdoc/empty-tags": "error",
+    "node/no-new-require": "error",
+    "node/no-path-concat": "error",
+    // Style
+    "one-var": "off",
+    "no-ternary": "off",
+    "no-magic-numbers": ["warn", { ignore: [-1, 0, 1, 2], ignoreEnums: true }],
+    "func-style": ["warn", "declaration", { allowArrowFunctions: true }],
+    "max-statements": "off",
+    "import/no-named-export": "off",
+    "import/group-exports": "off",
+    "import/prefer-default-export": "off",
+    "unicorn/no-null": "off",
+    "unicorn/switch-case-braces": ["warn", "avoid"],
+  },
+
+  overrides: [
+    {
+      files: ["*.config.{js,mjs,cjs}"],
+      rules: {
+        // Allow default exports for config files (Vite, etc.)
+        "no-default-export": "off",
+      },
+    },
+  ],
+});

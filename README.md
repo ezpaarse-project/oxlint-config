@@ -16,15 +16,23 @@ You'll need to have the configuration file created.
 
 You can refer to [documentation](https://oxc.rs/docs/guide/usage/linter/quickstart.html)
 
-```sh
-touch .oxlintrc.json
-```
+#### Using `.oxlintrc.json`
 
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/js.jsonc"]
+  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/js.config.jsonc"]
 }
+```
+
+#### Using `oxlint.config.ts` / Vite+
+
+```ts
+import oxlintConfig from "@ezpaarse-project/oxlint-config/js";
+
+export default defineConfig({
+  extends: [oxlintConfig],
+});
 ```
 
 ### TypeScript
@@ -41,13 +49,21 @@ You'll need to have the configuration file created.
 
 You can refer to [documentation](https://oxc.rs/docs/guide/usage/linter/quickstart.html)
 
-```sh
-touch .oxlintrc.json
-```
+#### Using `.oxlintrc.json`
 
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/ts.jsonc"]
+  "extends": ["./node_modules/@ezpaarse-project/oxlint-config/ts.config.jsonc"]
 }
+```
+
+#### Using `oxlint.config.ts` / Vite+
+
+```ts
+import oxlintConfig from "@ezpaarse-project/oxlint-config/ts";
+
+export default defineConfig({
+  extends: [oxlintConfig],
+});
 ```

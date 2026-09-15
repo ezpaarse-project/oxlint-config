@@ -1,6 +1,6 @@
 {
   "name": "@ezpaarse-project/oxlint-config",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "oxlint configuration for projects of this organisation",
   "keywords": [],
   "homepage": "https://github.com/ezpaarse-project/oxlint-config#readme",
@@ -10,22 +10,33 @@
   "license": "CeCILL",
   "author": "oxypomme",
   "files": [
+    "./configs/js.config.mjs",
+    "./js.config.jsonc",
     "./js.jsonc",
-    "./ts.jsonc"
+    "./configs/ts.config.mjs",
+    "./ts.config.jsonc",
+    "./ts.jsonc",
+    "./types.d.ts"
   ],
+  "exports": {
+    ".": {
+      "types": "./types.d.ts",
+      "default": "./configs/js.config.mjs"
+    },
+    "./ts": {
+      "types": "./types.d.ts",
+      "default": "./configs/ts.config.mjs"
+    }
+  },
+  "scripts": {},
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
+    "@types/node": "^24",
     "lefthook": "^2.1.4",
     "oxfmt": "^0.42.0"
   },
   "peerDependencies": {
     "oxlint": "^1"
-  },
-  "packageManager": "pnpm@10.11.0",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "lefthook"
-    ]
   }
 }

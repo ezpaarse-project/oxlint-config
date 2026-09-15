@@ -1,13 +1,17 @@
-{
-  "extends": [
-    "./js.jsonc"
-  ],
-  "plugins": [
-    "typescript"
-  ],
-  "rules": {
+import { defineConfig } from "oxlint";
+
+import jsConfig from "./js.config.mjs";
+
+export default defineConfig({
+  extends: [jsConfig],
+
+  plugins: ["typescript"],
+
+  rules: {
+    // Pedantic
     "jsdoc/require-param-type": "off",
     "jsdoc/require-returns-type": "off",
+    // Restriction
     "no-const-enum": "error",
     "typescript/no-namespace": "error",
     "typescript/no-dynamic-delete": "error",
@@ -17,44 +21,31 @@
     "typescript/no-invalid-void-type": "error",
     "typescript/no-non-null-asserted-nullish-coalescing": "error",
     "typescript/adjacent-overload-signatures": "error",
-    "typescript/array-type": [
-      "error",
-      {
-        "default": "array"
-      }
-    ],
+    "typescript/array-type": ["error", { default: "array" }],
     "typescript/consistent-generic-constructors": "error",
-    "typescript/consistent-indexed-object-style": [
-      "error",
-      "record"
-    ],
-    "typescript/consistent-type-definitions": [
-      "error",
-      "type"
-    ],
+    "typescript/consistent-indexed-object-style": ["error", "record"],
+    "typescript/consistent-type-definitions": ["error", "type"],
     "typescript/consistent-type-imports": "error",
     "typescript/no-empty-interface": "error",
     "typescript/no-inferrable-types": "error",
     "typescript/prefer-for-of": "error",
     "typescript/prefer-function-type": "error",
     "typescript/explicit-function-return-type": "warn",
+    // Style
     "import/consistent-type-specifier-style": "off",
     "typescript/parameter-properties": [
       "warn",
-      {
-        "prefer": "parameter-property"
-      }
-    ]
+      { prefer: "parameter-property" },
+    ],
   },
-  "overrides": [
+
+  overrides: [
     {
-      "files": [
-        "*.config.{ts,mts,cts}"
-      ],
-      "rules": {
-        "import/no-default-export": "off"
-      }
-    }
+      files: ["*.config.{ts,mts,cts}"],
+      rules: {
+        // Allow default exports for config files (Vite, etc.)
+        "import/no-default-export": "off",
+      },
+    },
   ],
-  "$schema": "../node_modules/oxlint/configuration_schema.json"
-}
+});
