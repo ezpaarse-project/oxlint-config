@@ -1,6 +1,6 @@
 {
   "name": "@ezpaarse-project/oxlint-config",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "oxlint configuration for projects of this organisation",
   "keywords": [],
   "homepage": "https://github.com/ezpaarse-project/oxlint-config#readme",
@@ -28,7 +28,9 @@
       "default": "./configs/ts.config.mjs"
     }
   },
-  "scripts": {},
+  "scripts": {
+    "prepack": "node scripts/prepack.mjs"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
